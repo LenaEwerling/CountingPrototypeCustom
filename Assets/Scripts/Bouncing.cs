@@ -5,19 +5,27 @@ using UnityEngine;
 public class Bouncing : MonoBehaviour
 {
     public float upForce = 9f;
-    private float dampingFactor = 0.8f; // Adjust this value to control the damping effect
-    public Vector3 direction = new Vector3(0.3f, 1f, 0f);
+    protected float dampingFactor {get; set;} // Adjust this value to control the damping effect
+    protected Vector3 direction {get; set;}
 
     private Rigidbody rb;
     private Counter counter;
     public bool scored = false;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        SetProperties();
+        Debug.Log(dampingFactor);
         rb = GetComponent<Rigidbody>();
         GameObject counterObject = GameObject.Find("Box");
         counter = counterObject.GetComponent<Counter>();
+    }
+
+    protected virtual void SetProperties()
+    {
+        direction = new Vector3(-0.3f, 1f, 0f);
+        dampingFactor = 0.8f;
     }
 
     // Update is called once per frame

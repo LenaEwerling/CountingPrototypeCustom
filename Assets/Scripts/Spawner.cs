@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject ball;
-    public GameController gameController;
+    public GameObject[] balls;
+    private GameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,8 @@ public class Spawner : MonoBehaviour
         Debug.Log(comesFrom);
         if (gameController.isGameActive)
         {
-            GameObject instantiatedball = Instantiate(ball);
+            int ball = Random.Range(0, balls.Length);
+            GameObject instantiatedball = Instantiate(balls[ball]);
 
             float y = Random.Range(2f, 8f);
 

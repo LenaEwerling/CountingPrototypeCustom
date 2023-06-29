@@ -4147,8 +4147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce94bf9061ae76c468de618bbd49cf9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 6371519872735798451, guid: 71fa6b25cef1266498575a1a0da6f55a, type: 3}
-  gameController: {fileID: 0}
+  balls:
+  - {fileID: 6371519872735798451, guid: 71fa6b25cef1266498575a1a0da6f55a, type: 3}
+  - {fileID: 4233240035891628014, guid: e36f7413366e2594da39ae0f130316af, type: 3}
 --- !u!4 &1545394226
 Transform:
   m_ObjectHideFlags: 0
